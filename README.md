@@ -1,3 +1,3 @@
 # R.native
 
-## welcomeScreen page
+## welcomeScreen page..
