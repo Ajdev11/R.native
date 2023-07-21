@@ -1,50 +1,50 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { ImageBackground, StyleSheet, View, Text, Button, Alert } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, Button} from 'react-native';
 
 function LandingPage() {
     return (
-      <ImageBackground
-        style={styles.background}
-        source={require("../assets/bgIcons.jpg")}
-      >
-        <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/favicon.png")} />
-        <Text>AbangCoooks</Text>
+      <ImageBackground style={styles.background}>
+        <View style={styles.ViewContainer}>
+          <Text style={styles.textColors}>WhatsApp Locked</Text>
+          <Text style={styles.unlock}>
+            Unlock with Touch ID to open WhatsApp
+          </Text>
         </View>
-        <Button
-        style={styles.log}
-          title={"Login Here"}
-          onPress={() => {
-            Alert.alert("Enter your login details");
-          }}
-        ></Button>
-        <Text>Don't have an account?</Text>
-        <Button title={"Sign Up"}></Button>
+        <Button title={"Use Touch ID"} style={styles.btn}>
+        </Button>
       </ImageBackground>
     );
 }
 
+
+
+// styling sections
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+    backgroundColor: "black",
   },
-  logo: {
-    width: 100,
-    height: 100,
-},
-logoContainer: {
+  btn: {
+    width: "100%",
+    borderRadius: 25,
+  },
+  textColors: {
+    fontSize: 30,
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+  unlock: {
+    color: "white",
+    fontSize: 17,
+  },
+  ViewContainer: {
     position: "absolute",
-    top: 300,
-    alignItems: "center",
-  },
-  log: {
+    top: 350,
   }
 });
-
-
-
 
 export default LandingPage;
